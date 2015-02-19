@@ -1,0 +1,90 @@
+	-- if love.mouse.isDown("l") then
+		-- flux.to(cam, 1, { zoom = cam.zsteps[cam.zit] })
+		-- cam.zit = cam.zit + 1
+	-- end
+	-- if love.mouse.isDown("r") then 
+		-- --cam.zoom = cam.zoom - .25 * dt
+		-- flux.to(cam, 1, { zoom = cam.zsteps[cam.zit] })
+		-- --lume.lerp(zoom, zoom - .5, dt)
+		-- cam.zit = cam.zit - 1
+	-- end
+
+	-- local r,g,b = unpack(wlight)
+	-- if down('t') then
+		-- r = math.wrap(math.round(r * 10, 1), 0, 255) * dt2 * 10
+		-- g = math.wrap(math.round(g - 10, 1), 0, 255) * dt2 * 10
+		-- b = math.wrap(math.round(b + 10, 1), 0, 255) * dt2 * 10
+		-- wlight = {r,g,b}
+	-- end	
+	-- if down("i") then
+		-- y = y - 100
+	-- end
+  
+  function doCamOffset(down, dt)
+	if down("i" ) then
+		cam.oy = cam.oy + 100/zoomR * dt
+	end
+	if down("k" ) then
+		cam.oy = cam.oy - 100/zoomR * dt
+	end
+	if down("j" ) then
+		cam.ox = cam.ox - 100/zoomR * dt
+	end
+	if down("l" ) then
+		cam.ox = cam.ox + 100/zoomR * dt
+	end
+end
+
+	if (ara.state.ymov == "fromkneel") then
+		local cFrame = ara.anim:getCurrentFrame()
+		-- Check if we reached the last frame of the toKneel anim
+		--if (ara.state.changing == true) then
+--			if (ara.anim ~= ara.anims.i2kScared) or (ara.anim ~= ara.anims.i2kScaredL) then
+--				ara.anim:setSpeed(.5) end
+			if (cFrame == 1) then
+				ara.state.changing = false
+				--ara.anim:reset()
+				if ara.state.facing == "left" then ara.anim = ara.anims.idleScaredL
+				else ara.anim = ara.anims.idleScared end
+				ara.state.ymov = "grounded"
+        --ara.anim:reset()
+        ara.anims.i2kScared:reset()
+				ara.anim:setSpeed(1)
+			else
+				if ara.state.facing == "left" then ara.anim = ara.anims.i2kScaredL
+          else ara.anim = ara.anims.i2kScared end
+--        ara.anim:seek( ara.anim:getSize())
+        --ara.anim:reset()
+				ara.anim:setMode("reverse")
+			end
+		--end
+	end
+  
+  		local cFrame = ara.anim:getCurrentFrame()
+		-- Check if we reached the last frame of the toKneel anim
+		--if (ara.state.changing == true) then
+--			if (ara.anim ~= ara.anims.i2kScared) or (ara.anim ~= ara.anims.i2kScaredL) then
+--				ara.anim:setSpeed(.5)  end
+			if (cFrame == ara.anim:getSize()) then
+				ara.state.changing = false    
+        --ara.anim:reset()
+				if ara.state.facing == "left" then ara.anim = ara.anims.kneelScaredL
+				else ara.anim = ara.anims.kneelScared end
+				ara.state.ymov = "kneeling"
+        --ara.anim:reset()
+        ara.anim:stop()
+--				ara.anim:setSpeed(1)
+			else 
+				if ara.state.facing == "left" then ara.anim = ara.anims.i2kScaredL
+				else ara.anim = ara.anims.i2kScared end
+			end
+		--end
+    
+    --      --cave.map[self.y][self.x] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y][self.x+1] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y][self.x+2] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y][self.x-1] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y][self.x-2] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y+1][self.x] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y+2][self.x] = 0 cave.nscoops = cave.nscoops + 1
+--      --cave.map[self.y-1][self.x] = 0 cave.nscoops = cave.nscoops + 1

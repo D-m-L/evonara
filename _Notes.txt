@@ -1,0 +1,30 @@
+Normal/Scared
+ Walking
+ Running
+ Jumping
+ Ledge Grab
+
+Parkour
+ Mantling
+ Wall Jump
+ Wall Running
+
+Vehicle
+ Dirt Bike
+ Car
+ Hangglider
+ Plane
+ Spaceship/Jet
+ Dirt Bike
+
+Level Types
+ Scroller
+  On Foot
+  Any Vehicle
+ Overhead
+  On Foot
+  Any Vehicle
+  
+ Mode7
+ Raycast 3D
+ 

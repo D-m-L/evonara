@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="9" height="7" tilewidth="128" tileheight="128">
+ <tileset firstgid="1" name="May" tilewidth="128" tileheight="128">
+  <image source="hale_may_128.png" width="128" height="128"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="9" height="7">
+  <properties>
+   <property name="collidable" value="true"/>
+  </properties>
+  <data encoding="csv">
+1,0,3758096385,0,1073741825,0,536870913,0,2147483649,
+0,0,0,0,0,0,0,0,0,
+1,0,536870913,0,2147483649,0,3758096385,0,1073741825,
+0,0,0,0,0,0,0,0,0,
+1,0,1610612737,0,1,0,2684354561,0,3221225473,
+0,0,0,0,0,0,0,0,0,
+1,0,2684354561,0,3221225473,0,1610612737,0,1
+</data>
+ </layer>
+</map>
